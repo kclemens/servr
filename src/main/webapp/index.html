@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>servr</title>
+    <script type="text/javascript" src="d3.v2.min.js"></script>
+    <script type="text/javascript" src="servr.js"></script>
+    <script type="text/javascript">
+    </script>
+    <style media="screen" type="text/css">
+        div.container {
+        padding: 1%;
+        margin: auto;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: auto;
+        overflow: hidden;
+        }
+    </style>
+</head>
+<body onload="loadIndexes()">
+<div class="container">
+    <select style="width: 14%; float: left" onchange="query()"></select>
+    <input style="width: 84%; float: right" type="text" onkeyup="query()"/>
+</div>
+<div class="container">
+    <table align="center" style="border-radius: 5px; width: 100%; text-align: center" class="container" id="results"/>
+</div>
+</body>
+</html>
