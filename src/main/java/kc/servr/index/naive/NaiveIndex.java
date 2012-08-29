@@ -76,7 +76,7 @@ public class NaiveIndex implements Index {
             }
 
             // sort them according to reception counts
-            TreeSet rowsTree = new TreeSet<Row>(new Comparator<Row>() {
+            TreeSet<Row> rowsTree = new TreeSet<Row>(new Comparator<Row>() {
                 @Override
                 public int compare(Row o1, Row o2) {
                     CompareToBuilder builder = new CompareToBuilder();
@@ -108,16 +108,10 @@ public class NaiveIndex implements Index {
         }
     }
 
-    @Override
-    public String[] getHeaders() {
-        return headers;
-    }
-
     private synchronized Row getNewRow(String[] fields) {
         if (this.headers.length != fields.length) {
             throw new IllegalArgumentException(String.format("Cannot addRow item with %s fields %s into addRow with %s headers!", fields.length, Arrays.toString(fields), this.headers.length));
         }
         return new Row(String.format("%d", this.nextId++), fields);
-
     }
 }

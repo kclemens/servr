@@ -1,5 +1,7 @@
 package kc.servr.model;
 
+import java.util.Arrays;
+
 /**
  * User: kclemens
  * Date: 6/25/12
@@ -22,5 +24,11 @@ public class Rows {
         return rows;
     }
 
-    //TODO add possibility to highlight query matches
+    @Override
+    public String toString() {
+        return "Rows{" +
+                "headers=" + (headers == null ? null : Arrays.asList(headers)) +
+                ", rows=" + (rows == null ? null : Arrays.asList(rows)) +
+                '}';
+    }
 }

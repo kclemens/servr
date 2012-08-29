@@ -27,8 +27,6 @@ public class NaiveIndexTest {
     @Before
     public void beforeEachTest() {
         index = new NaiveIndex(COLUMNS);
-
-        Assert.assertArrayEquals(index.getHeaders(), COLUMNS);
     }
 
     @Test

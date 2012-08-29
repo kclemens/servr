@@ -9,11 +9,6 @@ import kc.servr.model.Rows;
 public interface Index {
 
     /**
-     * @return the column headers that this addRow is indexing
-     */
-    String[] getHeaders();
-
-    /**
      * Adds a new row to the addRow.
      *
      * @param fields the row fields to addRow

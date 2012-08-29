@@ -37,7 +37,7 @@ public class IndexServlet {
     }
 
     @GET
-    @Produces("text/csv")
+    @Produces("text/csv;charset=utf-8")
     public String listAllIndexesCSV() {
         StringBuilder builder = new StringBuilder("index");
         for (String index : service.getIndexes()) {
@@ -48,13 +48,13 @@ public class IndexServlet {
 
     @GET
     @Path("/{indexName}")
-    @Produces("text/csv")
+    @Produces("text/csv;charset=utf-8")
     public Rows queryCSV(@QueryParam("query") @DefaultValue("") String query, @PathParam("indexName") String indexName) {
         return service.query(indexName, query);
     }
 
     @PUT
-    @Consumes("text/csv")
+    @Consumes("text/csv;charset=utf-8")
     @Path("/{indexName}")
     public void createIndex(@PathParam("indexName") String indexName, Rows rows) throws IOException {
         Index index = service.createIndex(indexName, rows.getHeaders());

@@ -1,5 +1,7 @@
 package kc.servr.model;
 
+import java.util.Arrays;
+
 /**
  * User: kclemens
  * Date: 6/20/12
@@ -25,5 +27,13 @@ public class Row {
 
     public String[] getFields() {
         return fields;
+    }
+
+    @Override
+    public String toString() {
+        return "Row{" +
+                "id='" + id + '\'' +
+                ", fields=" + (fields == null ? null : Arrays.asList(fields)) +
+                '}';
     }
 }
